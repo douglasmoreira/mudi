@@ -12,25 +12,25 @@
         <h1 class="display-4">Meus Pedidos</h1>
     </div>
     <div class="card mt-3">
-        <form class="card-body" action="/pedido/novo" method="post">
+        <form th:object="${requisicaoNovoPedido}" class="card-body" action="/pedido/novo" method="post">
             <div class="form-group">
                 <label for="nomeProduto">Produto</label>
-                <input class="form-control" name="nomeProduto" placeholder="nome do produto"/>
+                <input th:field="*{nomeProduto}" class="form-control" placeholder="nome do produto"/>
                 <small>Informa qual o nome do produto.</small>
             </div>
             <div class="form-group">
                 <label for="urlProduto">Url do PRoduto</label>
-                <input class="form-control" name="urlProduto" placeholder="url do produto"/>
+                <input th:field="*{urlProduto}" class="form-control" placeholder="url do produto"/>
                 <small>Procure em um site o produto que você deseja e cole a url da página aqui.</small>
             </div>
             <div class="form-group">
                 <label for="urlImagem">url da Imagem</label>
-                <input class="form-control" name="urlImagem" placeholder=" url da imagem"/>
+                <input th:field="*{urlImagem}" class="form-control" placeholder=" url da imagem"/>
                 <small>Copie a url de uma boa imagem do produto e cole aqui para ajudar a conseguir compradores.</small>
             </div>
             <div class="form-group">
                 <label for="descricao">Descriço</label>
-                <textarea class="form-control" name="descricao" placeholder="Adicione detalhes importantes para o comprador"></textarea>
+                <textarea th:field="*{descricao}" class="form-control" placeholder="Adicione detalhes importantes para o comprador"></textarea>
             </div>
             <button class="btn btn-primary mt-2" type="submit">Cadastrar</button>
         </form>
