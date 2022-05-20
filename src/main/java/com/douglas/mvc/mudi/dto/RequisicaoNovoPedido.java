@@ -1,6 +1,7 @@
 package com.douglas.mvc.mudi.dto;
 
 import com.douglas.mvc.mudi.model.Pedido;
+import com.douglas.mvc.mudi.model.StatusPedido;
 
 import javax.validation.constraints.NotBlank;
 
@@ -54,6 +55,7 @@ public class RequisicaoNovoPedido {
         pedido.setUrlProduto(urlProduto);
         pedido.setUrlImagem(urlImagem);
         pedido.setDescricao(descricao);
+        pedido.setStatus(StatusPedido.AGUARDANDO);
 
         return pedido;
     }
